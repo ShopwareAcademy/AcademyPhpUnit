@@ -1,0 +1,32 @@
+{
+    "name": "academy/php-unit",
+    "description": "Test a simple command with phpunit",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "AcademyPhpUnit\\AcademyPhpUnit",
+        "label": {
+            "de-DE": "Phpunit test plugin",
+            "en-GB": "Phpunit test plugin"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "AcademyPhpUnit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AcademyPhpUnit\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}

@@ -1,0 +1,21 @@
+name: PHP unit test
+
+on:
+  pull_request:
+    paths:
+      - '**/*.php'
+      - .github/workflows/php.yml
+  push:
+    paths:
+      - '**/*.php'
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+jobs:
+  phpunit:
+    uses: shopware/github-actions/.github/workflows/phpunit.yml@main
+    with:
+      extensionName: ${{ github.event.repository.name }}
+      shopwareVersion: trunk
