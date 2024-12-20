@@ -13,18 +13,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 class ExampleCommand extends Command
 {
-    // Provides a description, printed out in bin/console
-    protected function configure(): void
-    {
-        $this->setDescription('Does something very special.');
-    }
-
     // Actual code executed in the command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('It works!');
 
         // Exit code 0 for success
-        return 0;
+        return self::SUCCESS;
     }
 }

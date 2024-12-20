@@ -11,13 +11,11 @@ class ExampleCommandTest extends TestCase
 {
     public function testDescriptionIsCorrect(): void
     {
-        $application = new Application();
         $command = new ExampleCommand();
-        $application->add($command);
-
-        $commandTester = new CommandTester($application->find('swag-commands:example'));
+        $commandTester = new CommandTester($command);
         $commandTester->execute([]);
+        $commandTester->assertCommandIsSuccessful();
 
-        $this->assertSame('Does something very special.', $command->getDescription());
+        $this->assertSame('Add a short description for your command', $command->getDescription());
     }
 }
