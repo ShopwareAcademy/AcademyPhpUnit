@@ -4,10 +4,15 @@ on:
   pull_request:
     paths:
       - '**/*.php'
-      - .github/workflows/php.yml
+      - composer.json
+      - phpunit.xml
+      - .github/workflows/phpunit.yml
   push:
     paths:
       - '**/*.php'
+      - composer.json
+      - phpunit.xml
+      - .github/workflows/phpunit.yml
     branches:
       - main
   workflow_dispatch:

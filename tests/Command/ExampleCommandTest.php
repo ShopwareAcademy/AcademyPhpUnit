@@ -4,7 +4,6 @@ namespace AcademyPhpUnit\Tests\Command;
 
 use AcademyPhpUnit\Command\ExampleCommand;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
 class ExampleCommandTest extends TestCase
@@ -16,6 +15,7 @@ class ExampleCommandTest extends TestCase
         $commandTester->execute([]);
         $commandTester->assertCommandIsSuccessful();
 
-        $this->assertSame('Add a short description for your command', $command->getDescription());
+        $this->assertStringContainsString('It works!', $commandTester->getDisplay());
+        $this->assertSame('Demonstrates a simple testable command', $command->getDescription());
     }
 }
