@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
     name: 'swag-commands:example',
-    description: 'Add a short description for your command',
+    description: 'Demonstrates a simple testable command',
 )]
 class ExampleCommand extends Command
 {

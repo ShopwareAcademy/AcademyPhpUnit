@@ -1,17 +1,17 @@
 {
     "name": "academy/php-unit",
-    "description": "Test a simple command with phpunit",
+    "description": "Test a simple command with PHPUnit",
     "type": "shopware-platform-plugin",
     "version": "1.0.0",
     "license": "MIT",
     "require": {
-        "shopware/core": "~6.6.0"
+        "shopware/core": "~6.7.0"
     },
     "extra": {
         "shopware-plugin-class": "AcademyPhpUnit\\AcademyPhpUnit",
         "label": {
-            "de-DE": "Phpunit test plugin",
-            "en-GB": "Phpunit test plugin"
+            "de-DE": "PHPUnit test plugin",
+            "en-GB": "PHPUnit test plugin"
         }
     },
     "autoload": {

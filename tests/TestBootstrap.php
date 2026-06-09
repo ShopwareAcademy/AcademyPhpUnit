@@ -2,11 +2,19 @@
 
 use Shopware\Core\TestBootstrapper;
 
-$loader = (new TestBootstrapper())
-    ->addCallingPlugin()
-    ->addActivePlugins('AcademyPhpUnit')
-    ->setForceInstallPlugins(true)
-    ->bootstrap()
-    ->getClassLoader();
+try {
+    $loader = (new TestBootstrapper())
+        ->addCallingPlugin()
+        ->addActivePlugins('AcademyPhpUnit')
+        ->setForceInstallPlugins(true)
+        ->bootstrap()
+        ->getClassLoader();
+} catch (Exception $exception) {
+    throw new RuntimeException(
+        'Could not bootstrap the AcademyPhpUnit test environment.',
+        0,
+        $exception
+    );
+}
 
 $loader->addPsr4('AcademyPhpUnit\\Tests\\', __DIR__);
